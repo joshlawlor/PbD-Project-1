@@ -9,9 +9,15 @@ public class BaseConverter {
         //Second I need to extract the value on the left and the radix on the right (using substring)
         String value = arg.substring(0, colonIndex);
         String radixString = arg.substring(colonIndex + 1);
-        System.out.println("Value: " + value + " Radix: " + radixString);
+        //System.out.println("Value: " + value + " Radix: " + radixString);
         //Third I need to convert the extracted value to base 10
+        //Converting radix String to an integer for my base 10 conversion
+        int radix = Integer.parseInt(radixString);
+
+        int base10Value = Integer.parseInt(value, radix);
         //Lastly I need to print it out nice and neat like project example
+        System.out.println(value + " base " + radix + " is "+ base10Value + " base 10");
+
     }
 
     public static void main(String[] args) {
