@@ -6,6 +6,14 @@ public class BaseConverter {
         //First I need to find the index of the colon ":"
         int colonIndex = arg.indexOf(":");
         //System.out.println("Colon Index = " + colonIndex);
+
+        //*Extra Credit* Check if ':' is missing
+        if(colonIndex == -1){
+            System.out.println("Error, missing a colon in the argument " + arg);
+            return;
+        }
+
+
         //Second I need to extract the value on the left and the radix on the right (using substring)
         String value = arg.substring(0, colonIndex);
         String radixString = arg.substring(colonIndex + 1);
@@ -21,7 +29,7 @@ public class BaseConverter {
     }
 
     public static void main(String[] args) {
-        System.out.println("args = " + Arrays.toString(args));
+        //System.out.println("args = " + Arrays.toString(args));
         int i = 0;
         while (i < args.length) {
             processArguments(args[i]);
