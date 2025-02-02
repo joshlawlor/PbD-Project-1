@@ -9,7 +9,7 @@ public class BaseConverter {
 
         //*Extra Credit* Check if ':' is missing
         if(colonIndex == -1){
-            System.out.println("Error, missing a colon in the argument " + arg);
+            System.out.println("Error, missing a colon in the argument: " + arg);
             return;
         }
 
@@ -23,11 +23,16 @@ public class BaseConverter {
             //Converting radix String to an integer for my base 10 conversion
             int radix = Integer.parseInt(radixString);
 
+            if(radix < 2 || radix > 36) {
+                System.out.println("Error, invalid radix (out of range): " + radix + " in argument " + arg);
+                return;
+            }
+
             int base10Value = Integer.parseInt(value, radix);
             //Lastly I need to print it out nice and neat like project example
             System.out.println(value + " base " + radix + " is "+ base10Value + " base 10");
         }catch (NumberFormatException e){
-            System.out.println("Error, invalid number or radix in argument " + arg);
+            System.out.println("Error, invalid number or radix in argument: " + arg);
         }
 
 
