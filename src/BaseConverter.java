@@ -40,8 +40,8 @@ public class BaseConverter {
 
     public static void main(String[] args) {
         //System.out.println("args = " + Arrays.toString(args));
-        for(int i =0; i<args.length; i++){
-            processArguments(args[i]);
+        for (String arg : args) {
+            processArguments(arg);
         }
     }
 }
